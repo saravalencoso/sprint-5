@@ -1,0 +1,41 @@
+body {
+    background-image: url(./img/mountainsBG.png);
+    background-size: cover;
+}
+
+#weather{
+    padding: 1em;
+    text-align: start;
+    font-weight:600;
+}
+
+.card {
+    border-radius: 2em;
+}
+
+#jokeText {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 20px;
+    width: 500px; 
+    text-align:left;
+}
+
+#reportJokesButtons {
+    padding-left: 2em;
+    padding-right: 2em;
+    width: 500px; 
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+#jokeButton {
+    margin-top: 2em;
+    background-color:#3ED3DE;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}

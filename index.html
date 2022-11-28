@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="weather">Avui: parcialment ennuvolat</div>
+    <div class="container-sm text-center">
+        <div class="card mx-auto shadow p-3 mb-5 bg-white">
+            <div class="card-body justify-content-around">
+                <h1 class="card-title">Preparat per riure?</h1>
+                <p id="jokeText" class="card-text mx-auto"></p>
+                <div class="row mx-auto align-items-center" id="reportJokesButtons">
+                    <div class="img-fluid col-4" onclick="reportJokes(1)" href="#"><img src="./img/score1.png"></div>
+                    <div class="img-fluid col-4" onclick="reportJokes(2)" href="#"><img src="./img/score2.png"></div>
+                    <div class="img-fluid col-4" onclick="reportJokes(3)" href="#"><img src="./img/score3.png"></div>
+                </div>
+                <button id="jokeButton" class="btn" onclick="fetchJoke()" style="border: none">Next Joke</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
