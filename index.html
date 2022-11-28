@@ -9,13 +9,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="weather">Avui: parcialment ennuvolat</div>
+    <div class="weather"><p id="weatherBox"></p></div>
+    <div class="weather"><p id="tempBox"></p></div>
     <div class="container-sm text-center">
         <div class="card mx-auto shadow p-3 mb-5 bg-white">
             <div class="card-body justify-content-around">
                 <h1 class="card-title">Preparat per riure?</h1>
                 <p id="jokeText" class="card-text mx-auto"></p>
-                <div class="row mx-auto align-items-center" id="reportJokesButtons">
+                <div class="row mx-auto align-items-center" style="display:none" id="reportJokesButtons">
                     <div class="img-fluid col-4" onclick="reportJokes(1)" href="#"><img src="./img/score1.png"></div>
                     <div class="img-fluid col-4" onclick="reportJokes(2)" href="#"><img src="./img/score2.png"></div>
                     <div class="img-fluid col-4" onclick="reportJokes(3)" href="#"><img src="./img/score3.png"></div>

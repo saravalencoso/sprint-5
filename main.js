@@ -1,6 +1,11 @@
 const jokeButton = document.querySelector("#jokeButton");
 const jokeText = document.querySelector("#jokeText");
+const reportJokesButtons = document.querySelector("#reportJokesButtons");
 
+let reportAcudits = [];
+let id = ""; 
+
+//EXERCICI 1
 async function fetchJoke() { //fetchJoke() is an asynchronous function since it's marked with the async keyword
     //To start a request, call the special function fetch():
     const response = await fetch('https://icanhazdadjoke.com', { //fetch() starts an HTTP request to the url and returns a promise
@@ -21,23 +26,48 @@ async function fetchJoke() { //fetchJoke() is an asynchronous function since it'
 
     //Source: https://dmitripavlutin.com/javascript-fetch-async-await/
 
-}
-
-let reportAcudits = [];
-
-function reportJokes(score) {
-    const id = document.querySelector("[data-id]").dataset.id; //para guardar información en el elemento
+    //DOM
+    reportJokesButtons.style = "display: flex;";
+    id = document.querySelector("[data-id]").dataset.id; //para guardar información en el elemento
+    
+    //Creating new object and adding it to reportAcudits array
     const date = new Date().toISOString();
-
-    const joke = {
+    const acudit = {
         joke: id,
-        score, 
+        score: 0, 
         date
-    }
-
-    reportAcudits.push(joke); 
-
-    console.log(score, id, date); 
-    console.log(reportAcudits); 
+    }; reportAcudits.push(acudit); 
 }
 
+
+//EXERCICI 3
+function reportJokes(score) { //finds id in reportAcudits and updates score
+
+    let rateJoke = reportAcudits.find(joke => {
+        return joke.joke === id;
+    }); 
+
+    rateJoke.score = score; 
+
+    console.log(reportAcudits);
+}
+
+//EXERCICI 4
+const weatherBox = document.querySelector("#weatherBox");
+const tempBox = document.querySelector("#tempBox");
+
+async function fetchWeather() {
+    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?id=3128760&appid=f27eba93b60f95a5bdc014f378ab093f',
+    {
+        headers: {
+            Accept: 'application/json',
+        },
+    },);
+
+    const weather = await response.json();
+    weatherBox.textContent = "Avui: " + weather.weather[0].description; 
+    let temperature = (Number(weather.main.temp)-273).toFixed(0); 
+    tempBox.textContent = "Temperatura: " + temperature + "ºC"; 
+}
+
+fetchWeather();
